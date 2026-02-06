@@ -9,13 +9,11 @@ const calculateIncentives = async () => {
       GROUP BY employee_id, role, vehicle_type
     `);
 
-    console.log('Sales data: ', sales);
         if (!sales.length) {
       return buildFailure("No sales data uploaded. Please upload sales file first.");
     }
     const rules = await executeQuery(`SELECT * FROM structured_rules`);
 
-  console.log('Rules data: ', rules);
 
      if (!rules.length) {
       return buildFailure("No rules data uploaded. Please upload rules file first.");
@@ -23,10 +21,6 @@ const calculateIncentives = async () => {
 
          //Prevent duplicate calculation for the same data
     const existingResults = await executeQuery(`SELECT COUNT(*)::int AS total FROM incentive_results`);
-    console.log('Existing results count: ', existingResults[0].total);
-    if (existingResults[0].total > 0) {
-      return buildFailure("Incentives already calculated. Please clear previous results to recalculate.");
-    }
 
     const incentiveMap = {};
     const breakdown = {};
