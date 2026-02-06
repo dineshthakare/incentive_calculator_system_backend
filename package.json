@@ -1,0 +1,35 @@
+{
+  "name": "incentive_calculator_system_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dineshthakare/incentive_calculator_system_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dineshthakare/incentive_calculator_system_backend/issues"
+  },
+  "homepage": "https://github.com/dineshthakare/incentive_calculator_system_backend#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security",
+    "multer": "^2.0.2",
+    "path": "^0.12.7",
+    "pg": "^8.18.0"
+  },
+  "devDependencies": {
+    "nodemo": "^1.0.0"
+  }
+}
