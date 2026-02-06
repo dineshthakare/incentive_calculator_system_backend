@@ -54,6 +54,41 @@ incentive_results
 
 SQL schema files are included in the repository.
 
+## Database Tables
+
+### sales
+| Column        | Type    | Description                   |
+|---------------|---------|-------------------------------|
+| id            | SERIAL  | Primary key                   |
+| branch        | Text    | Branch                  |
+| employee_id   | INT     | Employee identifier           |
+| role          | TEXT    | Employee role                 |
+| vehicle_type  | TEXT    | Type of vehicle sold          |
+| quantity      | INT     | Units sold                    |
+| sale_at    | TIMESTAMP | Record creation timestamp    |
+
+### structured_rules
+| Column         | Type    | Description                        |
+|----------------|---------|------------------------------------|
+| id             | SERIAL  | Primary key                        |
+| role           | TEXT    | Employee role                      |
+| vehicle_type   | TEXT    | Type of vehicle                    |
+| min_units      | INT     | Minimum units for incentive        |
+| max_units      | INT     | Maximum units for incentive        |
+| base_incentive | NUMERIC | Base incentive amount              |
+| bonus_per_unit | NUMERIC | Bonus per extra unit               |
+| valid_from     | TIMESTAMP |                                  | 
+| valid_to       | TIMESTAMP |                                  | 
+
+### incentive_results
+| Column        | Type    | Description                       |
+|---------------|---------|-----------------------------------|
+| id            | SERIAL  | Primary key                        |
+| employee_id   | INT     | Employee identifier                |
+| total_amount  | NUMERIC | Total incentive calculated         |
+| breakdown     | JSON    | Incentive breakdown per employee   |
+| created_at    | TIMESTAMP | Record creation timestamp         |
+
 Design Notes
 
 Business logic is isolated in services for maintainability.
